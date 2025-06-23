@@ -160,7 +160,7 @@ const Index = () => {
                   </a>)}
                 <div className="flex flex-col space-y-2 pt-4">
                   <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold w-full">Masuk</Button>
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 w-full">Daftar</Button>
+                  <Button variant="outline" className="border-white w-full bg-zinc-950 hover:bg-zinc-800 text-zinc-50">Daftar</Button>
                 </div>
               </div>
             </nav>}
