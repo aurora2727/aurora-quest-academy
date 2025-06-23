@@ -301,94 +301,27 @@ const Index = () => {
           </div>
 
           <div className="text-center mb-12">
-            <div className="inline-flex space-x-4 bg-white rounded-lg p-1 shadow-sm">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">Pelatihan</Button>
-              <Button variant="ghost" className="text-gray-600">Magang</Button>
-              <Button variant="ghost" className="text-gray-600">Sertifikasi</Button>
-            </div>
+            
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <BookOpen className="w-6 h-6 text-blue-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Kelas Umum</h4>
-                  <p className="text-gray-600 mb-3">Ratusan kelas tersedia untuk berbagai bidang keahlian. Kamu bisa belajar mandiri dan dapatkan sertifikat kompetensi di akhir sesi kelas.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Trophy className="w-6 h-6 text-blue-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Bootcamp Intensif</h4>
-                  <p className="text-gray-600 mb-3">Berbagai program intensif tersedia dimulai dari offline bootcamp, Kelas Industri SMK, Kartu Prakerja, dan juga Studi Independen Bersertifikat (SIB).</p>
-                </div>
-              </div>
-
-              <p className="text-gray-600 leading-relaxed">
-                Menggunakan kurikulum berbasis industri yang dipadukan dengan 
-                metode PBL <span className="italic">(Project-based Learning)</span> sehingga pelatihan menjadi lebih 
-                berkualitas. Pelatihan di Aurora Nusa juga didukung oleh pengajar <span className="italic">expert</span> 
-                di bidangnya serta teknologi yang spesial sehingga belajar tidak hanya 
-                menonton video saja, tetapi benar-benar praktik.
-              </p>
-            </div>
+            
 
             <div className="relative">
-              <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998" alt="Learning illustration" className="w-full h-80 object-cover rounded-xl" />
+              
             </div>
           </div>
         </div>
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Mengapa Aurora Nusa by Educa?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Aurora Nusa mengoptimalkan teknologi dan kurikulum untuk mendukung pelatihan berkualitas
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              {whyChooseFeatures.map((feature, index) => <div key={index} className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>)}
-            </div>
-            
-            <div className="relative">
-              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf" alt="Advantages illustration" className="w-full h-96 object-cover rounded-xl" />
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Testimonials Section */}
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">
-              Cerita Mereka Tentang Aurora Nusa
-            </h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">Cerita Mereka Tentang Aurora Nusa Academy</h2>
             
             <div className="inline-flex space-x-4 bg-white rounded-lg p-1 shadow-sm mb-8">
               <Button className="bg-blue-600 hover:bg-blue-700 text-white">Testimoni Pimpinan</Button>
