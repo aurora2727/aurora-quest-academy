@@ -1,14 +1,23 @@
 import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { AuthModal } from "@/components/auth/AuthModal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Play, BookOpen, Trophy, Users, Star, ChevronRight, Menu, X, Phone, ShoppingCart, Search, GamepadIcon, Code, Smartphone, Settings, Palette, Box, ChevronLeft, MessageCircle } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+
 const Index = () => {
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authModalTab, setAuthModalTab] = useState<'login' | 'register'>('login');
+
   const navigationItems = [{
     name: "Programs",
-    href: "#programs"
+    href: "/courses"
   }, {
     name: "School Solutions",
     href: "#"
@@ -19,6 +28,7 @@ const Index = () => {
     name: "Hub",
     href: "#"
   }];
+
   const academyPrograms = [{
     id: 1,
     title: "Game Development",
@@ -50,6 +60,7 @@ const Index = () => {
     icon: Palette,
     description: "Photoshop, Illustrator, UI/UX"
   }];
+
   const featuredPrograms = [{
     id: 1,
     title: "Pelatihan Umum",
@@ -86,6 +97,7 @@ const Index = () => {
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
     buttonText: "Jelajahi Program"
   }];
+
   const testimonials = [{
     id: 1,
     name: "Drs. Amran Ali, MM.",
@@ -101,19 +113,24 @@ const Index = () => {
     text: "Aurora Nusa memberikan pengalaman belajar yang disesuaikan dengan kebutuhan industri. Program Magang Studi Independen dari mengajar dengan kreatif dan interaktif memberikan dampak positif.",
     avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786"
   }];
-  const whyChooseFeatures = [{
-    title: "Kurikulum Industri",
-    description: "Kurikulum dirancang oleh pakar di bidangnya masing-masing, kemudian dipadukan dengan metode PBL (Project-Based Learning).",
-    icon: BookOpen
-  }, {
-    title: "Pengajar Industri",
-    description: "Dalam proses pelaksanaan pelatihan, peserta akan dibimbing oleh pengajar yang berasal dari industri dan berpengalaman di bidangnya.",
-    icon: Users
-  }, {
-    title: "Sertifikat Industri",
-    description: "Sertifikat kompetensi yang dikeluarkan oleh Aurora Nusa menggunakan sistem penilaian yang ketat dan standar industri sehingga terpercaya.",
-    icon: Trophy
-  }];
+
+  const handleAuthAction = (action: 'login' | 'register') => {
+    if (user) {
+      if (action === 'login') {
+        navigate('/dashboard');
+      } else {
+        navigate('/courses');
+      }
+    } else {
+      setAuthModalTab(action);
+      setAuthModalOpen(true);
+    }
+  };
+
+  const handleExplorePrograms = () => {
+    navigate('/courses');
+  };
+
   return <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-gradient-to-r from-sky-400 to-blue-600 sticky top-0 z-50">
@@ -124,27 +141,60 @@ const Index = () => {
                 <BookOpen className="w-5 h-5 text-blue-600" />
               </div>
               <h1 className="text-xl font-bold text-white">AURORA NUSA ACADEMY</h1>
-              <span className="text-sm text-blue-100">
-            </span>
             </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
-              {navigationItems.map(item => <a key={item.name} href={item.href} className="text-white hover:text-blue-100 font-medium">
-                  {item.name} <ChevronRight className="w-4 h-4 inline ml-1" />
-                </a>)}
+              {navigationItems.map(item => 
+                item.href.startsWith('#') ? (
+                  <a key={item.name} href={item.href} className="text-white hover:text-blue-100 font-medium">
+                    {item.name} <ChevronRight className="w-4 h-4 inline ml-1" />
+                  </a>
+                ) : (
+                  <Link key={item.name} to={item.href} className="text-white hover:text-blue-100 font-medium">
+                    {item.name} <ChevronRight className="w-4 h-4 inline ml-1" />
+                  </Link>
+                )
+              )}
             </nav>
 
             <div className="flex items-center space-x-4">
               <Button variant="ghost" className="hidden md:flex items-center space-x-2 text-white hover:bg-white/20">
                 <Search className="w-4 h-4" />
               </Button>
-              <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold hidden md:block">
-                Masuk
-              </Button>
-              <Button variant="outline" className="border-white text-white hover:text-blue-600 hidden md:block bg-zinc-50">
-                Daftar
-              </Button>
+              
+              {user ? (
+                <div className="hidden md:flex items-center space-x-4">
+                  <Link to="/dashboard">
+                    <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold">
+                      Dashboard
+                    </Button>
+                  </Link>
+                  <Button 
+                    onClick={signOut}
+                    variant="outline" 
+                    className="border-white text-white hover:bg-white hover:text-blue-600"
+                  >
+                    Logout
+                  </Button>
+                </div>
+              ) : (
+                <div className="hidden md:flex items-center space-x-4">
+                  <Button 
+                    onClick={() => handleAuthAction('login')}
+                    className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold"
+                  >
+                    Masuk
+                  </Button>
+                  <Button 
+                    onClick={() => handleAuthAction('register')}
+                    variant="outline" 
+                    className="border-white text-white hover:text-blue-600 bg-zinc-50"
+                  >
+                    Daftar
+                  </Button>
+                </div>
+              )}
               
               {/* Mobile menu button */}
               <Button variant="ghost" size="icon" className="lg:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -156,12 +206,50 @@ const Index = () => {
           {/* Mobile Navigation */}
           {isMenuOpen && <nav className="lg:hidden mt-4 pb-4 border-t border-blue-400 pt-4">
               <div className="flex flex-col space-y-4">
-                {navigationItems.map(item => <a key={item.name} href={item.href} className="text-white hover:text-blue-100 font-medium">
-                    {item.name}
-                  </a>)}
+                {navigationItems.map(item => 
+                  item.href.startsWith('#') ? (
+                    <a key={item.name} href={item.href} className="text-white hover:text-blue-100 font-medium">
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link key={item.name} to={item.href} className="text-white hover:text-blue-100 font-medium">
+                      {item.name}
+                    </Link>
+                  )
+                )}
                 <div className="flex flex-col space-y-2 pt-4">
-                  <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold w-full">Masuk</Button>
-                  <Button variant="outline" className="border-white w-full bg-zinc-950 hover:bg-zinc-800 text-zinc-50">Daftar</Button>
+                  {user ? (
+                    <>
+                      <Link to="/dashboard">
+                        <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold w-full">
+                          Dashboard
+                        </Button>
+                      </Link>
+                      <Button 
+                        onClick={signOut}
+                        variant="outline" 
+                        className="border-white w-full bg-zinc-950 hover:bg-zinc-800 text-zinc-50"
+                      >
+                        Logout
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <Button 
+                        onClick={() => handleAuthAction('login')}
+                        className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold w-full"
+                      >
+                        Masuk
+                      </Button>
+                      <Button 
+                        onClick={() => handleAuthAction('register')}
+                        variant="outline" 
+                        className="border-white w-full bg-zinc-950 hover:bg-zinc-800 text-zinc-50"
+                      >
+                        Daftar
+                      </Button>
+                    </>
+                  )}
                 </div>
               </div>
             </nav>}
@@ -180,10 +268,13 @@ const Index = () => {
               <p className="text-xl text-blue-100 leading-relaxed">Raih karir dan keahlian digital dengan peluang kerja tanpa batas</p>
               
               <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                <Button size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold">
+                <Button 
+                  size="lg" 
+                  onClick={() => handleAuthAction('register')}
+                  className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold"
+                >
                   Daftar GRATIS Sekarang
                 </Button>
-                
               </div>
             </div>
             
@@ -227,8 +318,6 @@ const Index = () => {
                 <Trophy className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-blue-600 mb-2">Lulusan Telah Terbukti di Industri</h3>
-              <p className="text-sm text-blue-500">
-            </p>
             </Card>
 
             <Card className="text-center p-6 hover:shadow-lg transition-shadow">
@@ -294,29 +383,17 @@ const Index = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full bg-sky-500 hover:bg-sky-600">
+                  <Button 
+                    onClick={handleExplorePrograms}
+                    className="w-full bg-sky-500 hover:bg-sky-600"
+                  >
                     {program.buttonText}
                   </Button>
                 </CardContent>
               </Card>)}
           </div>
-
-          <div className="text-center mb-12">
-            
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-
-            <div className="relative">
-              
-            </div>
-          </div>
         </div>
       </section>
-
-      {/* Why Choose Section */}
-      
 
       {/* Testimonials Section */}
       <section className="bg-gray-50 py-16">
@@ -365,17 +442,20 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Ecosystem Join Section */}
-      <section className="py-16">
-        
-      </section>
-
       {/* WhatsApp Float Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <Button size="icon" className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-lg">
           <MessageCircle className="w-6 h-6 text-white" />
         </Button>
       </div>
+
+      {/* Auth Modal */}
+      <AuthModal
+        isOpen={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+        defaultTab={authModalTab}
+      />
     </div>;
 };
+
 export default Index;
