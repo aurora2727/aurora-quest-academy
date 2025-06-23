@@ -4,92 +4,168 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Play, BookOpen, Trophy, Users, Star, ChevronRight, Menu, X, Phone, ShoppingCart } from "lucide-react";
+import { Play, BookOpen, Trophy, Users, Star, ChevronRight, Menu, X, Phone, ShoppingCart, Search, GamepadIcon, Code, Smartphone, Settings, Palette, Box, ChevronLeft, MessageCircle } from "lucide-react";
 
 const Index = () => {
-  const [user] = useState({ name: "Alex", level: "Beginner", progress: 65 });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigationItems = [
-    { name: "Programs", href: "#" },
-    { name: "Locations", href: "#" },
-    { name: "For Corporate", href: "#" },
-    { name: "Community", href: "#" },
-    { name: "Why Aurora Nusa", href: "#" }
+    { name: "Programs", href: "#programs" },
+    { name: "School Solutions", href: "#" },
+    { name: "Corporate Solutions", href: "#" },
+    { name: "Hub", href: "#" }
   ];
 
-  const featuredCourses = [
+  const academyPrograms = [
     {
       id: 1,
-      title: "Blender Character Modeling",
-      instructor: "Maya Chen",
-      duration: "8 weeks",
-      level: "Beginner",
-      rating: 4.8,
-      students: 1234,
-      thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
-      progress: 30
+      title: "Game Development",
+      icon: GamepadIcon,
+      description: "Unity, Unreal Engine, C#"
     },
     {
       id: 2,
-      title: "Unity Game Development",
-      instructor: "Ryan Torres",
-      duration: "12 weeks", 
-      level: "Intermediate",
-      rating: 4.9,
-      students: 856,
-      thumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-      progress: 0
+      title: "3D Design",
+      icon: Box,
+      description: "Blender, Maya, Character Modeling"
+    },
+    {
+      id: 3,
+      title: "Web Development",
+      icon: Code,
+      description: "React, Node.js, Full Stack"
+    },
+    {
+      id: 4,
+      title: "App Development",
+      icon: Smartphone,
+      description: "Flutter, React Native"
+    },
+    {
+      id: 5,
+      title: "DevOps",
+      icon: Settings,
+      description: "Docker, AWS, CI/CD"
+    },
+    {
+      id: 6,
+      title: "2D Design",
+      icon: Palette,
+      description: "Photoshop, Illustrator, UI/UX"
     }
   ];
 
-  const stats = [
-    { number: "5+ tahun", label: "Pengalaman di dunia 3D animation" },
-    { number: "500+", label: "Global hiring partners" },
-    { number: "10,000+", label: "Alumni" },
-    { number: "s.d. 25 juta/bulan", label: "Gaji awal tertinggi alumni Aurora Nusa" },
-    { number: "On campus + online", label: "Pilihan metode belajar terlengkap" }
+  const featuredPrograms = [
+    {
+      id: 1,
+      title: "Pelatihan Umum",
+      subtitle: "Program untuk upgrade skill",
+      description: "dengan kurikulum berstandar industri. Ada berbagai bidang keahlian yang bisa dipelajari dengan instruktur expert.",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+      buttonText: "Jelajahi Program"
+    },
+    {
+      id: 2,
+      title: "Bootcamp Intensif",
+      subtitle: "Program untuk optimasi skill",
+      description: "digital secara lebih intensif agar siap kerja dalam waktu singkat dengan mentor berpengalaman.",
+      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998",
+      buttonText: "Jelajahi Program"
+    },
+    {
+      id: 3,
+      title: "Magang Akademis",
+      subtitle: "Program pelatihan kerja lapangan",
+      description: "(PKL) bersertifikat untuk siswa, mahasiswa, dan fresh graduate yang ingin pengalaman industri.",
+      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+      buttonText: "Jelajahi Program"
+    },
+    {
+      id: 4,
+      title: "Magang Pro",
+      subtitle: "Program pelatihan kerja (internship)",
+      description: "bersertifikat di perusahaan dan bidang teknologi pilihan dengan mentor berpengalaman.",
+      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf",
+      buttonText: "Jelajahi Program"
+    },
+    {
+      id: 5,
+      title: "Lowongan Kerja",
+      subtitle: "Program untuk bantu para pencari",
+      description: "kerja menjadi talenta digital yang siap diserap industri dengan pelatihan dan sertifikasi.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+      buttonText: "Jelajahi Program"
+    }
   ];
 
-  const specialties = [
-    "3D Modeling",
-    "Character Design", 
-    "Game Development",
-    "Animation",
-    "VFX & Motion Graphics",
-    "Unity Development"
+  const testimonials = [
+    {
+      id: 1,
+      name: "Drs. Amran Ali, MM.",
+      position: "Kepala Sekolah SMKN 1 Simpang Empat",
+      rating: 5,
+      text: "Saya, selaku Kepala SMKN 1 Simpang Empat mengapresiasi Program Kelas Industri Aurora Nusa yang sesuai dengan konsep link and supermatch 8+i yang dicanangkan oleh Kemendikbudristek. Dengan terbangunnya Program Kelas Industri, harapan sekolah bisa mencetak lulusan sesuai dengan standar industri.",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+    },
+    {
+      id: 2,
+      name: "Dewi Purnamasari, S.Kom",
+      position: "Kaprodi Sistem dan Teknologi Informasi",
+      rating: 5,
+      text: "Aurora Nusa memberikan pengalaman belajar yang disesuaikan dengan kebutuhan industri. Program Magang Studi Independen dari mengajar dengan kreatif dan interaktif memberikan dampak positif.",
+      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786"
+    }
+  ];
+
+  const whyChooseFeatures = [
+    {
+      title: "Kurikulum Industri",
+      description: "Kurikulum dirancang oleh pakar di bidangnya masing-masing, kemudian dipadukan dengan metode PBL (Project-Based Learning).",
+      icon: BookOpen
+    },
+    {
+      title: "Pengajar Industri",
+      description: "Dalam proses pelaksanaan pelatihan, peserta akan dibimbing oleh pengajar yang berasal dari industri dan berpengalaman di bidangnya.",
+      icon: Users
+    },
+    {
+      title: "Sertifikat Industri",
+      description: "Sertifikat kompetensi yang dikeluarkan oleh Aurora Nusa menggunakan sistem penilaian yang ketat dan standar industri sehingga terpercaya.",
+      icon: Trophy
+    }
   ];
 
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <header className="bg-gradient-to-r from-sky-400 to-blue-600 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-teal-500 to-blue-600 rounded-lg flex items-center justify-center">
-                <BookOpen className="w-5 h-5 text-white" />
+              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                <BookOpen className="w-5 h-5 text-blue-600" />
               </div>
-              <h1 className="text-xl font-bold text-gray-800">Aurora Nusa Academy</h1>
+              <h1 className="text-xl font-bold text-white">AURORA NUSA</h1>
+              <span className="text-sm text-blue-100">INDONESIA</span>
             </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               {navigationItems.map((item) => (
-                <a key={item.name} href={item.href} className="text-gray-700 hover:text-teal-600 font-medium">
-                  {item.name}
+                <a key={item.name} href={item.href} className="text-white hover:text-blue-100 font-medium">
+                  {item.name} <ChevronRight className="w-4 h-4 inline ml-1" />
                 </a>
               ))}
             </nav>
 
             <div className="flex items-center space-x-4">
-              <Button variant="ghost" className="hidden md:flex items-center space-x-2">
-                <ShoppingCart className="w-4 h-4" />
+              <Button variant="ghost" className="hidden md:flex items-center space-x-2 text-white hover:bg-white/20">
+                <Search className="w-4 h-4" />
               </Button>
-              <Button variant="outline" className="hidden md:block">
+              <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold hidden md:block">
                 Masuk
               </Button>
-              <Button className="bg-teal-600 hover:bg-teal-700 hidden md:block">
+              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 hidden md:block">
                 Daftar
               </Button>
               
@@ -97,7 +173,7 @@ const Index = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="lg:hidden"
+                className="lg:hidden text-white"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -107,16 +183,16 @@ const Index = () => {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <nav className="lg:hidden mt-4 pb-4 border-t pt-4">
+            <nav className="lg:hidden mt-4 pb-4 border-t border-blue-400 pt-4">
               <div className="flex flex-col space-y-4">
                 {navigationItems.map((item) => (
-                  <a key={item.name} href={item.href} className="text-gray-700 hover:text-teal-600 font-medium">
+                  <a key={item.name} href={item.href} className="text-white hover:text-blue-100 font-medium">
                     {item.name}
                   </a>
                 ))}
                 <div className="flex flex-col space-y-2 pt-4">
-                  <Button variant="outline" className="w-full">Masuk</Button>
-                  <Button className="bg-teal-600 hover:bg-teal-700 w-full">Daftar</Button>
+                  <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold w-full">Masuk</Button>
+                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 w-full">Daftar</Button>
                 </div>
               </div>
             </nav>
@@ -125,50 +201,47 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-16 lg:py-24">
+      <section className="bg-gradient-to-r from-sky-400 to-blue-600 text-white py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                Raih <span className="text-teal-400">karir</span> dan <span className="text-teal-400">keahlian digital</span> dengan peluang kerja tanpa batas
+              <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
+                Optimasi Skill dan Kompetensi, <br />
+                Lebih Siap Kerja dan Wirausaha
               </h1>
-              <p className="text-xl text-gray-300 leading-relaxed">
-                Aurora Nusa Academy dipercaya sejak 2019 dan telah menyalurkan lebih dari 
-                10.000 talenta digital berkualitas ke 500+ hiring partner 
-                Aurora Nusa di seluruh dunia
+              <p className="text-xl text-blue-100 leading-relaxed">
+                Aurora Nusa menghadirkan platform lengkap untuk meningkatkan kompetensi lulusan 
+                yang siap kerja dan siap wirausaha melalui program pelatihan berbasis proyek (PBL), 
+                magang online bersertifikat, dan sertifikasi industri.
               </p>
               
-              <div className="flex flex-wrap gap-3">
-                {specialties.map((specialty) => (
-                  <Badge key={specialty} variant="outline" className="bg-teal-600/20 text-teal-300 border-teal-500">
-                    {specialty}
-                  </Badge>
-                ))}
-              </div>
-              
               <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white">
-                  Lihat Program
+                <Button size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold">
+                  Daftar GRATIS Sekarang
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900">
-                  <Phone className="w-4 h-4 mr-2" />
-                  Hubungi Kami
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+                  Menjadi Mitra
                 </Button>
               </div>
             </div>
             
             <div className="relative">
-              <div className="bg-gradient-to-br from-teal-500/20 to-blue-600/20 rounded-2xl p-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" 
                   alt="Aurora Nusa Academy Students"
                   className="w-full h-80 object-cover rounded-xl"
                 />
-                <div className="absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center">
-                  <Button size="lg" className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white">
-                    <Play className="w-6 h-6 mr-2" />
-                    Aurora Nusa Academy Profile
-                  </Button>
+                <div className="absolute top-4 right-4 bg-white rounded-lg p-2">
+                  <div className="flex items-center space-x-2">
+                    <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    <span className="text-sm font-semibold text-gray-900">4.8/5</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Tingkat Kepuasan</p>
+                </div>
+                <div className="absolute bottom-4 left-4 bg-white rounded-lg p-2">
+                  <div className="text-lg font-bold text-gray-900">100+</div>
+                  <p className="text-xs text-gray-600">Kursus Pilihan</p>
                 </div>
               </div>
             </div>
@@ -176,20 +249,155 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Ecosystem Section */}
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-                  {stat.number}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Ekosistem Aurora Nusa by Educa
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-blue-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                <BookOpen className="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Dunia Pendidikan</h3>
+            </Card>
+
+            <Card className="text-center p-6 hover:shadow-lg transition-shadow bg-blue-50 border-blue-200">
+              <div className="w-16 h-16 bg-blue-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                <Trophy className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-blue-600 mb-2">AURORA NUSA</h3>
+              <p className="text-sm text-blue-500">INDONESIA</p>
+            </Card>
+
+            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-orange-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                <Users className="w-8 h-8 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">DUDIKA</h3>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Academy Programs Section */}
+      <section className="py-16" id="programs">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Aurora Nusa Academy</h2>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-8">
+            {academyPrograms.map((program) => (
+              <Card key={program.id} className="p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+                <div className="w-16 h-16 bg-blue-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                  <program.icon className="w-8 h-8 text-blue-600" />
                 </div>
-                <div className="text-gray-600 text-sm">
-                  {stat.label}
+                <h3 className="font-semibold text-gray-900 mb-2">{program.title}</h3>
+                <p className="text-sm text-gray-600">{program.description}</p>
+              </Card>
+            ))}
+          </div>
+
+          <div className="flex justify-center space-x-4">
+            <Button variant="ghost" size="icon">
+              <ChevronLeft className="w-5 h-5" />
+            </Button>
+            <div className="flex space-x-2 items-center">
+              <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+              <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+              <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+              <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+            </div>
+            <Button variant="ghost" size="icon">
+              <ChevronRight className="w-5 h-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Programs Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Program Unggulan Aurora Nusa</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {featuredPrograms.slice(0, 3).map((program) => (
+              <Card key={program.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="aspect-video relative overflow-hidden">
+                  <img 
+                    src={program.image} 
+                    alt={program.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle className="text-lg">{program.title}</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    {program.subtitle} {program.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Button className="w-full bg-sky-500 hover:bg-sky-600">
+                    {program.buttonText}
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mb-12">
+            <div className="inline-flex space-x-4 bg-white rounded-lg p-1 shadow-sm">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white">Pelatihan</Button>
+              <Button variant="ghost" className="text-gray-600">Magang</Button>
+              <Button variant="ghost" className="text-gray-600">Sertifikasi</Button>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <BookOpen className="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Kelas Umum</h4>
+                  <p className="text-gray-600 mb-3">Ratusan kelas tersedia untuk berbagai bidang keahlian. Kamu bisa belajar mandiri dan dapatkan sertifikat kompetensi di akhir sesi kelas.</p>
                 </div>
               </div>
-            ))}
+
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Trophy className="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Bootcamp Intensif</h4>
+                  <p className="text-gray-600 mb-3">Berbagai program intensif tersedia dimulai dari offline bootcamp, Kelas Industri SMK, Kartu Prakerja, dan juga Studi Independen Bersertifikat (SIB).</p>
+                </div>
+              </div>
+
+              <p className="text-gray-600 leading-relaxed">
+                Menggunakan kurikulum berbasis industri yang dipadukan dengan 
+                metode PBL <span className="italic">(Project-based Learning)</span> sehingga pelatihan menjadi lebih 
+                berkualitas. Pelatihan di Aurora Nusa juga didukung oleh pengajar <span className="italic">expert</span> 
+                di bidangnya serta teknologi yang spesial sehingga belajar tidak hanya 
+                menonton video saja, tetapi benar-benar praktik.
+              </p>
+            </div>
+
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1531482615713-2afd69097998" 
+                alt="Learning illustration"
+                className="w-full h-80 object-cover rounded-xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -199,113 +407,159 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Mengapa memilih <span className="text-teal-600">Aurora Nusa Academy</span>?
+              Mengapa Aurora Nusa by Educa?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Aurora Nusa telah menjadi lembaga pendidikan teknologi digital berpengalaman dan terpercaya selama lebih dari 5 
-              tahun sejak 2019.
+              Aurora Nusa mengoptimalkan teknologi dan kurikulum untuk mendukung pelatihan berkualitas
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <Trophy className="w-6 h-6 text-purple-600" />
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              {whyChooseFeatures.map((feature, index) => (
+                <div key={index} className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <feature.icon className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">
-                  Lulusan Aurora Nusa telah terbukti di industri
-                </h3>
-              </div>
-              <p className="text-gray-600">
-                Aurora Nusa telah menjadi talent pool bagi 500+ perusahaan hiring partner dari berbagai 
-                sektor industri di seluruh dunia.
-              </p>
-            </Card>
-
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                  <Users className="w-6 h-6 text-green-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">
-                  Aurora Nusa is a life changer
-                </h3>
-              </div>
-              <p className="text-gray-600">
-                Bergabung bersama dengan 10,000+ alumni kami yang telah meraih karir impian di industri 
-                digital dari berbagai macam background.
-              </p>
-            </Card>
-
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                  <Star className="w-6 h-6 text-orange-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">
-                  Dukungan karir seumur hidup
-                </h3>
-              </div>
-              <p className="text-gray-600">
-                Mulai dari membangun CV, persiapan interview hingga konsultasi karir, Aurora Nusa siap 
-                membantu judi talenta digital unggulan.
-              </p>
-            </Card>
+              ))}
+            </div>
+            
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf" 
+                alt="Advantages illustration"
+                className="w-full h-96 object-cover rounded-xl"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Courses */}
+      {/* Testimonials Section */}
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="text-3xl font-bold text-gray-900">Featured Courses</h3>
-            <Button variant="ghost" className="text-teal-600 hover:text-teal-700">
-              View All <ChevronRight className="w-4 h-4 ml-1" />
-            </Button>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">
+              Cerita Mereka Tentang Aurora Nusa
+            </h2>
+            
+            <div className="inline-flex space-x-4 bg-white rounded-lg p-1 shadow-sm mb-8">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white">Testimoni Pimpinan</Button>
+              <Button variant="ghost" className="text-gray-600">Kisah Sukses Alumni</Button>
+              <Button variant="ghost" className="text-gray-600">Karya Keren Peserta</Button>
+            </div>
           </div>
-          
-          <div className="grid gap-6 md:grid-cols-2">
-            {featuredCourses.map((course) => (
-              <Card key={course.id} className="hover:shadow-lg transition-shadow cursor-pointer">
-                <div className="aspect-video relative overflow-hidden rounded-t-lg">
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial) => (
+              <Card key={testimonial.id} className="p-6">
+                <div className="flex items-start space-x-4 mb-4">
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-600">{testimonial.position}</p>
+                    <div className="flex space-x-1 mt-2">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-700 leading-relaxed">{testimonial.text}</p>
+              </Card>
+            ))}
+          </div>
+
+          <div className="flex justify-center mt-8">
+            <div className="flex space-x-4">
+              <Button variant="ghost" size="icon">
+                <ChevronLeft className="w-5 h-5" />
+              </Button>
+              <div className="flex space-x-2 items-center">
+                <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+                <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+              </div>
+              <Button variant="ghost" size="icon">
+                <ChevronRight className="w-5 h-5" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ecosystem Join Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Saatnya Bergabung di Ekosistem <br />
+              Aurora Nusa by Educa
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow border-2 border-blue-200 bg-blue-50">
+              <div className="w-16 h-16 bg-blue-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Siswa, Mahasiswa, dan <br />Pencari Kerja
+              </h3>
+            </Card>
+
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-blue-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                <BookOpen className="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                SMA/K dan Perguruan Tinggi
+              </h3>
+            </Card>
+
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-orange-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                <Trophy className="w-8 h-8 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Korporasi dan Instansi
+              </h3>
+            </Card>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {featuredPrograms.map((program) => (
+              <Card key={program.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="aspect-square relative overflow-hidden">
                   <img 
-                    src={course.thumbnail} 
-                    alt={course.title}
+                    src={program.image} 
+                    alt={program.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                    <Button size="sm" className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white">
-                      <Play className="w-4 h-4 mr-2" />
-                      Continue
-                    </Button>
-                  </div>
-                  {course.progress > 0 && (
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/50 p-2">
-                      <Progress value={course.progress} className="h-1" />
-                    </div>
-                  )}
                 </div>
-                <CardHeader className="pb-2">
-                  <div className="flex items-start justify-between">
-                    <CardTitle className="text-gray-900 text-lg">{course.title}</CardTitle>
-                    <Badge variant="secondary" className="bg-teal-100 text-teal-800 text-xs">
-                      {course.level}
-                    </Badge>
-                  </div>
-                  <CardDescription className="text-gray-600">
-                    by {course.instructor} • {course.duration}
+                <CardHeader className="p-4">
+                  <CardTitle className="text-base">{program.title}</CardTitle>
+                  <CardDescription className="text-sm">
+                    {program.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="flex items-center justify-between text-sm text-gray-600">
-                    <div className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                      <span>{course.rating}</span>
-                      <span>({course.students} students)</span>
-                    </div>
-                  </div>
+                <CardContent className="p-4 pt-0">
+                  <Button size="sm" className="w-full bg-sky-500 hover:bg-sky-600 text-sm">
+                    {program.buttonText}
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -313,37 +567,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Your Progress Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h3 className="text-3xl font-bold text-gray-900 mb-8">Your Learning Progress</h3>
-          <Card className="bg-gradient-to-r from-teal-50 to-blue-50 border-teal-200">
-            <CardHeader>
-              <CardTitle className="text-gray-900">Welcome back, {user.name}! 👋</CardTitle>
-              <CardDescription className="text-gray-600">
-                Level: {user.level} • {user.progress}% Complete
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Progress value={user.progress} className="h-3 mb-4" />
-              <div className="flex justify-between text-sm text-gray-600 mb-6">
-                <span>Keep going!</span>
-                <span>{user.progress}%</span>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <Button className="bg-teal-600 hover:bg-teal-700">
-                  <Play className="w-4 h-4 mr-2" />
-                  Continue Learning
-                </Button>
-                <Button variant="outline" className="border-teal-300 text-teal-700 hover:bg-teal-50">
-                  <Users className="w-4 h-4 mr-2" />
-                  Join Community
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+      {/* WhatsApp Float Button */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <Button
+          size="icon"
+          className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-lg"
+        >
+          <MessageCircle className="w-6 h-6 text-white" />
+        </Button>
+      </div>
     </div>
   );
 };
