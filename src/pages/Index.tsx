@@ -182,9 +182,7 @@ const Index = () => {
                 <Button size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold">
                   Daftar GRATIS Sekarang
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
-                  Menjadi Mitra
-                </Button>
+                
               </div>
             </div>
             
