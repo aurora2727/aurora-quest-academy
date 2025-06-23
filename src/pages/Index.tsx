@@ -197,7 +197,7 @@ const Index = () => {
                   <p className="text-xs text-gray-600">Tingkat Kepuasan</p>
                 </div>
                 <div className="absolute bottom-4 left-4 bg-white rounded-lg p-2">
-                  <div className="text-lg font-bold text-gray-900">100+</div>
+                  <div className="text-lg font-bold text-gray-900">10+</div>
                   <p className="text-xs text-gray-600">Kursus Pilihan</p>
                 </div>
               </div>
