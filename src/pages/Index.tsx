@@ -123,8 +123,9 @@ const Index = () => {
               <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
                 <BookOpen className="w-5 h-5 text-blue-600" />
               </div>
-              <h1 className="text-xl font-bold text-white">AURORA NUSA</h1>
-              <span className="text-sm text-blue-100">INDONESIA</span>
+              <h1 className="text-xl font-bold text-white">AURORA NUSA ACADEMY</h1>
+              <span className="text-sm text-blue-100">
+            </span>
             </div>
 
             {/* Desktop Navigation */}
