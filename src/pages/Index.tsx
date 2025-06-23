@@ -218,22 +218,23 @@ const Index = () => {
               <div className="w-16 h-16 bg-blue-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
                 <BookOpen className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Dunia Pendidikan</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Dukungan Karir Seumur Hidup</h3>
             </Card>
 
             <Card className="text-center p-6 hover:shadow-lg transition-shadow bg-blue-50 border-blue-200">
               <div className="w-16 h-16 bg-blue-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
                 <Trophy className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-blue-600 mb-2">AURORA NUSA</h3>
-              <p className="text-sm text-blue-500">INDONESIA</p>
+              <h3 className="text-xl font-semibold text-blue-600 mb-2">Lulusan Telah Terbukti di Industri</h3>
+              <p className="text-sm text-blue-500">
+            </p>
             </Card>
 
             <Card className="text-center p-6 hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-orange-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
                 <Users className="w-8 h-8 text-orange-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">DUDIKA</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">We are a Life Changer</h3>
             </Card>
           </div>
         </div>
