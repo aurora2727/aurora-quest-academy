@@ -141,7 +141,7 @@ const Index = () => {
               <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold hidden md:block">
                 Masuk
               </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 hidden md:block">
+              <Button variant="outline" className="border-white text-white hover:text-blue-600 hidden md:block bg-zinc-50">
                 Daftar
               </Button>
               
@@ -366,62 +366,7 @@ const Index = () => {
 
       {/* Ecosystem Join Section */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Saatnya Bergabung di Ekosistem <br />
-              Aurora Nusa by Educa
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow border-2 border-blue-200 bg-blue-50">
-              <div className="w-16 h-16 bg-blue-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <Users className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Siswa, Mahasiswa, dan <br />Pencari Kerja
-              </h3>
-            </Card>
-
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-blue-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <BookOpen className="w-8 h-8 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                SMA/K dan Perguruan Tinggi
-              </h3>
-            </Card>
-
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-orange-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                <Trophy className="w-8 h-8 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Korporasi dan Instansi
-              </h3>
-            </Card>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {featuredPrograms.map(program => <Card key={program.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="aspect-square relative overflow-hidden">
-                  <img src={program.image} alt={program.title} className="w-full h-full object-cover" />
-                </div>
-                <CardHeader className="p-4">
-                  <CardTitle className="text-base">{program.title}</CardTitle>
-                  <CardDescription className="text-sm">
-                    {program.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="p-4 pt-0">
-                  <Button size="sm" className="w-full bg-sky-500 hover:bg-sky-600 text-sm">
-                    {program.buttonText}
-                  </Button>
-                </CardContent>
-              </Card>)}
-          </div>
-        </div>
+        
       </section>
 
       {/* WhatsApp Float Button */}
